@@ -1,32 +1,21 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import AppLoading from 'expo-app-loading';
-import { ThemeProvider } from 'styled-components';
-
-import {
-  useFonts,
-  Gupter_400Regular,
-  Gupter_500Medium,
-  Gupter_700Bold,
-} from '@expo-google-fonts/gupter';
-
-import theme from './theme/index';
-import { Home } from './screens/Home';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-
-  const [fontsLoaded] = useFonts({
-    Gupter_400Regular,
-    Gupter_500Medium,
-    Gupter_700Bold,
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
-
-  return(
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
