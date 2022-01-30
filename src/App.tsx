@@ -1,5 +1,6 @@
 import React from 'react';
 import AppLoading from 'expo-app-loading';
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { ThemeProvider } from 'styled-components';
 
 import {
@@ -11,6 +12,7 @@ import {
 
 import theme from './theme/index';
 import { Home } from './screens/Home';
+import { SignIn } from './screens/SignIn';
 
 export default function App() {
 
@@ -26,7 +28,10 @@ export default function App() {
 
   return(
     <ThemeProvider theme={theme}>
-      <Home />
+      <SafeAreaProvider>
+        {/* <Home /> */}
+        <SignIn/>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }
