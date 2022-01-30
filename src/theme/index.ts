@@ -16,9 +16,34 @@ export default {
     black_light: "rgb(166, 159, 157)",
 
     shape: '#FFFFFF',
-    title: '#363F5F',
+    title: '#DDE3F0',
     text: '#969CB2',
-    background: '#F0F2F5',
+    tex_dark: '#000000',
+    background: '#1B1B1F',
+    background_button: '#702BE0',
+  },
+
+  fonts: {
+    regular: 'Gupter_400Regular',
+    medium: 'Gupter_500Medium',
+    bold: 'Gupter_700Bold',
+  },
+
+  size: {
+    small_10: "10px",
+    small_12: "12px",
+    small_14: "14px",
+
+    medium_16: "16px",
+    medium_18: "18px",
+
+    large_20: "20px",
+    large_22: "22px",
+    large_24: "24px",
+
+    extra_40: "40px",
+  }
+}
 
     // Azorius: White/Blue
     // Boros: Red/White
@@ -47,24 +72,3 @@ export default {
     // Ink: No Black
     // Witch: No Red
     // Yore: No Green
-  },
-
-  fonts: {
-    regular: 'Gupter_400Regular',
-    medium: 'Gupter_500Medium',
-    bold: 'Gupter_700Bold',
-  },
-
-  size: {
-    small_s: "10px",
-    small_ss: "12px",
-    small_sss: "14px",
-
-    medium_m: "16px",
-    medium_mm: "18px",
-
-    large_l: "20px",
-    large_ll: "22px",
-    large_lll: "24px",
-  }
-}

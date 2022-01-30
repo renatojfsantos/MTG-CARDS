@@ -10,17 +10,17 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.bold};
-  font-size: ${({ theme }) => theme.size.large_lll};
+  font-size: ${({ theme }) => theme.size.large_24};
   color: ${({ theme }) => theme.colors.green};
 `;
 
 export const SubTitle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.medium};
-  font-size: ${({ theme }) => theme.size.medium_m};
+  font-size: ${({ theme }) => theme.size.medium_16};
   color: ${({ theme }) => theme.colors.red};
 `;
 
 export const Icon = styled(AntDesign)`
   color: ${({ theme }) => theme.colors.blue};
-  font-size: ${({ theme }) => theme.size.large_lll};
+  font-size: ${({ theme }) => theme.size.large_24};
 `;
