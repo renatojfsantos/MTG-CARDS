@@ -1,0 +1,198 @@
+{
+  "env": {
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "error",
+    "indent": "off",
+    "@typescript-eslint/indent": [
+      "warn",
+      2
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "camelcase": "off"
+  }
+}
+
+// {
+//   "root": true,
+//   "extends": [
+//     "airbnb",
+//     "plugin:@typescript-eslint/recommended"
+//   ],
+//   "plugins": [
+//     "jest",
+//     "react-native",
+//     "react",
+//     "react-hooks",
+//     "@typescript-eslint"
+//   ],
+//   "env": {
+//     "browser": true,
+//     "es6": true,
+//     "jest/globals": true,
+//     "node": true
+//   },
+//   "globals": {
+//     "Atomics": "readonly",
+//     "SharedArrayBuffer": "readonly"
+//   },
+//   "parserOptions": {
+//     "ecmaFeatures": {
+//       "jsx": true
+//     },
+//     "ecmaVersion": 2018,
+//     "sourceType": "module"
+//   },
+//   "parser": "@typescript-eslint/parser",
+//   "ignorePatterns": [
+//     "env.js"
+//   ],
+//   "rules": {
+//     "no-console": [
+//       1,
+//       {
+//         "allow": [
+//           "warn",
+//           "error"
+//         ]
+//       }
+//     ],
+//     "react/prefer-stateless-function": 0,
+//     "react/prop-types": 0,
+//     "react/jsx-filename-extension": 0,
+//     "react/jsx-one-expression-per-line": 0,
+//     "react/jsx-props-no-spreading": 0,
+//     "react-native/no-raw-text": 2,
+//     "react-native/no-inline-styles": 2,
+//     "comma-dangle": [
+//       "off"
+//     ],
+//     "import/prefer-default-export": 0,
+//     "react/require-default-props": "off",
+//     "indent": "off",
+//     "no-empty-function": "error",
+//     "prefer-const": "error",
+//     "no-plusplus": [
+//       "error",
+//       {
+//         "allowForLoopAfterthoughts": true
+//       }
+//     ],
+//     "newline-before-return": "error",
+//     "max-len": [
+//       "error",
+//       {
+//         "code": 120,
+//         "ignorePattern": "^import\\W.*"
+//       }
+//     ],
+//     "no-multiple-empty-lines": [
+//       "error",
+//       {
+//         "max": 1,
+//         "maxBOF": 0,
+//         "maxEOF": 0
+//       }
+//     ],
+//     "eol-last": [
+//       "error",
+//       "always"
+//     ],
+//     "no-shadow": "off",
+//     "@typescript-eslint/no-shadow": [
+//       "error"
+//     ],
+//     "import/extensions": [
+//       "error",
+//       "never",
+//       {
+//         "svg": "always",
+//         "png": "always",
+//         "json": "always"
+//       }
+//     ],
+//     "import/no-cycle": [
+//       2,
+//       {
+//         "maxDepth": 1
+//       }
+//     ],
+//     "import/no-named-as-default": 0,
+//     "import/no-named-as-default-member": 0,
+//     "import/no-unresolved": 0,
+//     "semi": [
+//       "error",
+//       "never"
+//     ],
+//     "object-curly-spacing": [
+//       "error",
+//       "always"
+//     ],
+//     "object-curly-newline": [
+//       "error",
+//       {
+//         "multiline": true,
+//         "consistent": true,
+//         "minProperties": 4
+//       }
+//     ],
+//     "array-bracket-spacing": [
+//       "off"
+//     ],
+//     "no-param-reassign": [
+//       "error",
+//       {
+//         "props": true,
+//         "ignorePropertyModificationsFor": [
+//           "state",
+//           "acc",
+//           "e"
+//         ]
+//       }
+//     ],
+//     "@typescript-eslint/indent": [
+//       "warn",
+//       2
+//     ],
+//     "no-use-before-define": "off",
+//     "@typescript-eslint/no-use-before-define": "error",
+//     "@typescript-eslint/no-unused-vars": "error",
+//     "@typescript-eslint/explicit-module-boundary-types": "off",
+//     "@typescript-eslint/no-empty-function": [
+//       "error",
+//       {
+//         "allow": [
+//           "arrowFunctions"
+//         ]
+//       }
+//     ],
+//     "lines-between-class-members": 0,
+//     "class-methods-use-this": 0
+//   },
+//   "settings": {
+//     "import/resolver": {
+//       "babel-plugin-root-import": {
+//         "rootPathSuffix": "src"
+//       }
+//     }
+//   }
+// }
