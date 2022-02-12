@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 import {
   Container,
   Title,
   SubTitle,
-  Icon,
-} from './styles';
+  Icon
+} from './styles'
 
 export const Home = () => {
   return (
@@ -15,5 +15,5 @@ export const Home = () => {
 
       <Icon name="github"/>
     </Container>
-  );
+  )
 }

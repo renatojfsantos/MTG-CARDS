@@ -1,37 +1,36 @@
-import React from 'react';
-import AppLoading from 'expo-app-loading';
+import React from 'react'
+import AppLoading from 'expo-app-loading'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components'
 
 import {
   useFonts,
   Gupter_400Regular,
   Gupter_500Medium,
-  Gupter_700Bold,
-} from '@expo-google-fonts/gupter';
+  Gupter_700Bold
+} from '@expo-google-fonts/gupter'
 
-import theme from './theme/index';
-import { Home } from './screens/Home';
-import { SignIn } from './screens/SignIn';
+import theme from './theme/index'
+import { Home } from './screens/Home'
+import { SignIn } from './screens/SignIn'
 
-export default function App() {
-
+export default function App () {
   const [fontsLoaded] = useFonts({
     Gupter_400Regular,
     Gupter_500Medium,
-    Gupter_700Bold,
-  });
+    Gupter_700Bold
+  })
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <AppLoading />
   }
 
-  return(
+  return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         {/* <Home /> */}
         <SignIn/>
       </SafeAreaProvider>
     </ThemeProvider>
-  );
+  )
 }
