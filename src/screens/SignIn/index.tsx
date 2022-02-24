@@ -1,90 +1,107 @@
 import React from 'react'
+import { ScrollView, Alert } from 'react-native'
+import { useForm } from 'react-hook-form'
+
 import { Button } from '../../components/Button'
-import { Input } from '../../components/Input'
+import { InputForm } from '../../components/InputForm'
 
 import {
   Container,
-  TitleGreeting,
-  SubTitleGreeting,
-  ContainerImage,
+  KeyboardAvoidingContainer,
   Form,
-  Fields,
+  ContainerImage,
+  Image,
+  BoxForgotPassword,
   TextForgotPassword,
-  ContainerSeparator,
-  SeparatorLeft,
-  TextSeparator,
-  SeparatorRight,
-  WrapperSocialButton,
-  ButtonSocial,
-  TextButtonSocial,
   Footer,
   TextQuestion,
   TextCreateAccount
 } from './styles'
 
-const GREETING = 'Bem Vindo!'
-const WELCOME = 'Tenha acesso ao universo incrível de Magic The Gathering.'
+interface FormData {
+  email: string
+  password: string
+}
+
 const QUESTION_ACCOUNT = 'Ainda não tem uma conta?'
 const CREATE_ACCOUNT = 'Cadastre-se!'
-const OR_SIGN_IN_WITH = 'Fazer login com'
 const FORGOT_PASSWORD = 'Esqueceu a senha? 🔒'
 
 export const SignIn = () => {
-  const handleCreateAccount = () => {
-    console.log('Mudou')
+  const { control, handleSubmit } = useForm()
+
+  function handleRegister (form: any) {
+    if (!form.email) {
+      return Alert.alert('Digite um email válido!')
+    }
+
+    if (!form.password) {
+      return Alert.alert('Digite uma senha válida!')
+    }
+
+    const data: FormData = {
+      email: form.email,
+      password: form.password
+    }
+
+    console.log(data)
   }
 
   return (
     <Container>
-      {/* <TitleGreeting>{GREETING}</TitleGreeting> */}
-      {/* <SubTitleGreeting>{WELCOME}</SubTitleGreeting> */}
-      <ContainerImage/>
+      <KeyboardAvoidingContainer>
+        <ScrollView style={{ width: '100%' }}>
 
-      <Form>
-        <Fields>
-          <Input
-            placeholder="Digite seu email"
-          />
+          <Form>
+            <ContainerImage>
+              <Image/>
+            </ContainerImage>
 
-          <Input
-            placeholder="Digite sua senha"
-          />
+            <InputForm
+              name='email'
+              control={control}
+              placeholder="Digite seu email"
+              autoCapitalize='none'
+              autoCorrect={false}
+              keyboardType='email-address'
+              textContentType='emailAddress'
+              autoCompleteType='email'
+              returnKeyType='next'
+            />
 
-          <TextForgotPassword onPress={handleCreateAccount}>
-            {FORGOT_PASSWORD}
-          </TextForgotPassword>
-        </Fields>
-        <Button
-          title="Entrar"
-        />
-      </Form>
+            <InputForm
+              name='password'
+              control={control}
+              placeholder="Digite sua senha"
+              autoCapitalize='none'
+              autoCorrect={false}
+              keyboardType='email-address'
+              textContentType='password'
+              autoCompleteType='password'
+              returnKeyType='send'
+            />
 
-      <ContainerSeparator>
-        <SeparatorLeft/>
-        <TextSeparator>{OR_SIGN_IN_WITH}</TextSeparator>
-        <SeparatorRight />
-      </ContainerSeparator>
+            <BoxForgotPassword>
+              <TextForgotPassword onPress={() => {}}>
+                {FORGOT_PASSWORD}
+              </TextForgotPassword>
+            </BoxForgotPassword>
 
-      <WrapperSocialButton>
-        <ButtonSocial>
-          <TextButtonSocial>Google</TextButtonSocial>
-        </ButtonSocial>
+            <Button
+              title="Entrar"
+              onPress={handleSubmit(handleRegister)}
+            />
+          </Form>
 
-        <ButtonSocial>
-          <TextButtonSocial>Apple</TextButtonSocial>
-        </ButtonSocial>
+          <Footer>
+            <TextQuestion>{QUESTION_ACCOUNT}</TextQuestion>
+            <TextCreateAccount onPress={() => {}}>
+              {CREATE_ACCOUNT}
+            </TextCreateAccount>
+          </Footer>
 
-        <ButtonSocial>
-          <TextButtonSocial>Discord</TextButtonSocial>
-        </ButtonSocial>
-      </WrapperSocialButton>
-
-      <Footer>
-        <TextQuestion>{QUESTION_ACCOUNT}</TextQuestion>
-        <TextCreateAccount onPress={handleCreateAccount}>
-          {CREATE_ACCOUNT}
-        </TextCreateAccount>
-      </Footer>
+        </ScrollView>
+      </KeyboardAvoidingContainer>
     </Container>
   )
 }
