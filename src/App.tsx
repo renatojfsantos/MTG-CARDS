@@ -10,8 +10,10 @@ import {
   Gupter_700Bold
 } from '@expo-google-fonts/gupter'
 
+import { NavigationContainer } from '@react-navigation/native'
+import { AppRoutes } from '../src/router/routes'
+
 import theme from './theme/index'
-import { Home } from './screens/Home'
 import { SignIn } from './screens/SignIn'
 
 export default function App () {
@@ -28,8 +30,9 @@ export default function App () {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
-        {/* <Home /> */}
-        <SignIn/>
+        <NavigationContainer>
+          <AppRoutes />
+        </NavigationContainer>
       </SafeAreaProvider>
     </ThemeProvider>
   )
